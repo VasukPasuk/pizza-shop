@@ -1,0 +1,39 @@
+@import "styles/_colors";
+.notFoundPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(0deg, #FF9548, #FF3D00);
+  height: 100%;
+  color: $bg-slate-200;
+  gap: 2rem;
+  .iconBox {
+    svg {
+      font-size: 14rem;
+    }
+  }
+  .textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+    span {
+      font-size: 1.25rem;
+    }
+  }
+  .returnButton {
+    padding: 1rem 4rem;
+    border: 1px solid $bg-slate-200;
+    border-radius: 0.5rem;
+    transition: 1s ease background;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

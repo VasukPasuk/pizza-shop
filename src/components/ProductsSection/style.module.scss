@@ -1,0 +1,17 @@
+.productsBox {
+  background: #FFF3CA;
+  padding: 0.75rem;
+  display: grid;
+  grid-template: 32px auto / 100%;
+  .currentCategory {
+
+  }
+  .productsList {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    gap: 1rem;
+    @media screen and (width <= 768px ) {
+      grid-template: repeat(6, 1fr) / repeat(1, 1fr);
+    }
+  }
+}

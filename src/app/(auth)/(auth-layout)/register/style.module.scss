@@ -1,0 +1,115 @@
+@import "styles/_colors";
+
+.formTitleBox {
+  margin: 1rem 0;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.formInputsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  div {
+    position: relative;
+    width: 100%;
+
+    svg {
+      position: absolute;
+      right: 3.5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25rem;
+      transition: 1s ease color;
+    }
+
+    &:nth-child(2) {
+      svg {
+        &:nth-child(2):hover {
+          color: $bg-blue-300;
+          cursor: pointer;
+        }
+      }
+    }
+
+    input {
+      border: 2px solid white;
+      background: transparent;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      outline: none;
+      border-radius: 0.75rem;
+      color: white;
+      transition: 1s ease border;
+
+      &::placeholder {
+        margin-left: 0.5rem;
+        color: white;
+      }
+
+      &:focus {
+        border: 2px solid rgba(255, 255, 255, 0.3575);
+      }
+    }
+
+    .emailInput {
+
+    }
+
+    .passwordInput {
+
+    }
+
+  }
+}
+
+.formCheckboxBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.5rem 0;
+
+  div {
+    &:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &:nth-child(2) {
+
+    }
+  }
+}
+
+.formButton {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 1.5rem;
+  background: $bg-slate-200;
+  color: black;
+  font-weight: 800;
+}
+
+.registerLinkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  span {
+    font-weight: 300;
+  }
+
+  .registerLink {
+    font-weight: 600;
+  }
+}

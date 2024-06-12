@@ -1,0 +1,55 @@
+.filterBox {
+  background: #FFF3CA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #525252;
+  padding: 0 1rem;
+  .dropDownFilters {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    li {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      background: rgba(255, 210, 168, 0.3);
+      padding: 0.3rem 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid #FFD2A8;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.25s ease-out background;
+      &:hover {
+        background: rgba(255, 210, 168, 0.6);
+      }
+      svg {
+        transition: all 0.25s ease-out;
+      }
+      .optionBox {
+        top: 120%;
+        position: absolute;
+        background: #FFF3CA;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #FFD2A8;
+        li {
+          border-radius: 0;
+          border: 0;
+          border-bottom: 1px solid #FFD2A8;
+          &:last-child {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}
