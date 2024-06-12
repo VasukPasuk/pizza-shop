@@ -5,6 +5,7 @@ import {useAppSelector} from "@/hooks";
 import {IPizza} from "@/interfaces";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import {RootState} from "@/redux/store";
+
 function ProductsSection() {
 	const products = useAppSelector((state:RootState) => state.shop.pizzas)
   return (
@@ -14,7 +15,7 @@ function ProductsSection() {
 			</div>
 			<ul className={styles.productsList}>
 				{[...Array(6)].map( (_, index) => (
-					<ProductCard product={products[index]}/>
+					<ProductCard key={products[index].name} product={products[index]}/>
 				))}
 			</ul>
 		</section>

@@ -35,7 +35,7 @@ function FilterBar() {
   const dropDownHandler = (prop: keyof TSelectStates) => () => {
     setSelectStates(prev => ({...prev, [prop]: !prev[prop]}));
   }
-  const categories = useAppSelector((state:RootState) => state.shop.categories)
+  const categories = useAppSelector((state: RootState) => state.shop.categories)
   const dispatch = useAppDispatch();
   return (
     <section className={styles.filterBox}>
@@ -50,8 +50,8 @@ function FilterBar() {
             <FaAngleDown style={selectStates[data.stateProp] ? {transform: "rotate(180deg"} : {}}/>
             {index === 0 && (selectStates[data.stateProp] && (
               <ul className={styles.optionBox}>
-                {categories.map((category, index)=> (
-                  <li>
+                {categories.map((category, index) => (
+                  <li key={category}>
                     {category}
                   </li>
                 ))}

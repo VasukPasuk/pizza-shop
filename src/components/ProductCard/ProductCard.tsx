@@ -48,6 +48,7 @@ function ProductCard(props: { product: IPizza }) {
         <div>
           {sizes.map((label, index) => (
             <button
+              key={label}
               onClick={() => {
                 setCurrentSize(prevState => label)
                 toast.success(`Pizza's size is ${label} now`, {
