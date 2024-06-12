@@ -44,7 +44,7 @@ function Page() {
         Login
       </button>
       <div className={styles.registerLinkBox}>
-        <span>Don't have an account?</span> <Link href={"/register"} className={styles.registerLink}> Register </Link>
+        <span>{"Don't have an account?"}</span> <Link href={"/register"} className={styles.registerLink}> Register </Link>
       </div>
     </>
   )
