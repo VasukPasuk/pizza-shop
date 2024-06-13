@@ -6,19 +6,17 @@ import Image from "next/image";
 import {FaPlus} from "react-icons/fa6";
 import {FaInfo} from "react-icons/fa";
 import {Bounce, toast} from "react-toastify";
-import {useAppDispatch} from "@/hooks";
+import {useAppDispatch, useAppSelector} from "@/hooks";
 import {addToCart, removeFromCart} from "@/redux/Slices/shop.slice";
 import {RxCross2} from "react-icons/rx";
-
-type TSize = 'small' | 'medium' | 'big'
+import {TSize} from "@/types";
 
 const sizes: TSize[] = ['small', 'medium', 'big']
 
 function ProductCard(props: { product: IPizza }) {
-  const {category, name, image, ingredients, price} = props.product;
+  const {category, name, image, ingredients, price, incart} = props.product;
   const dispatch = useAppDispatch();
   const [activeRecipe, setActiveRecipe] = useState<boolean>(false)
-  const [inCart, setInCart] = useState<boolean>(false)
   const [currentSize, setCurrentSize] = useState<TSize>('medium')
   return (
     <li className={styles.productCard}>
@@ -69,23 +67,22 @@ function ProductCard(props: { product: IPizza }) {
             {price} $
           </div>
           <button onClick={() => {
-            toast.success(`Pizza has been successfully ${inCart ? 'removed from' : 'added to'} cart`, {
+            toast.success(`Pizza has been successfully ${incart ? 'removed from' : 'added to'} cart`, {
               position: 'bottom-left',
               autoClose: 3000,
               closeOnClick: true,
               transition: Bounce,
               theme: 'light'
             });
-            setInCart(prev => !prev)
-            if (inCart) {
-              dispatch(removeFromCart({productName: name}))
+            if (incart) {
+              dispatch(removeFromCart({name: name}))
             } else {
-              dispatch(addToCart({productName: name}))
+              dispatch(addToCart({name: name}))
             }
 
           }}>
-            {inCart ? <RxCross2/> : <FaPlus/>}
-            <span> {inCart ? "Remove" : "Add to cart"} </span>
+            {incart ? <RxCross2/> : <FaPlus/>}
+            <span> {incart ? "Remove" : "Add to cart"} </span>
           </button>
         </div>
       </div>

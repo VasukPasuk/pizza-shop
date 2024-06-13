@@ -7,9 +7,10 @@ import {BiCart, BiDollar} from "react-icons/bi";
 import {HEADER_ICONS_SIZE} from "@/constants";
 import {useAppSelector} from "@/hooks";
 import {RootState} from "@/redux/store";
+import Link from "next/link";
 
 function Header() {
-  const cartLength = useAppSelector((state:RootState )=> state.shop.cart.length)
+  const cartLength = useAppSelector((state:RootState )=> state.shop.pizzas.filter(pizza => pizza.incart).length)
   return (
     <header className={styles.headerBox}>
       <div className={styles.logoTextBox}>
@@ -30,10 +31,12 @@ function Header() {
           |
         </div>
         <button className={styles.cartBtn}>
-          <BiCart size={HEADER_ICONS_SIZE}/>
-          <div className={styles.amountLabel}>
-            {cartLength}
-          </div>
+          <Link href={'/cart'}>
+            <BiCart size={HEADER_ICONS_SIZE}/>
+            <div className={styles.amountLabel}>
+              {cartLength}
+            </div>
+          </Link>
         </button>
         <div className={styles.verticalLine}>
           |

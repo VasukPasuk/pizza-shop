@@ -4,7 +4,8 @@
   display: grid;
   grid-template: 32px auto / 100%;
   .currentCategory {
-
+    font-weight: 900;
+    font-size: 1.35rem;
   }
   .productsList {
     display: grid;

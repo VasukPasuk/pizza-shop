@@ -7,6 +7,7 @@ import {MdCategory} from "react-icons/md";
 import {FaExchangeAlt, FaFilter} from "react-icons/fa";
 import {useAppDispatch, useAppSelector} from "@/hooks";
 import {RootState} from "@/redux/store";
+import {setCategoryRule} from "@/redux/Slices/shop.slice";
 
 const DROP_DOWN: Array<DropDown> = [
   {
@@ -35,7 +36,7 @@ function FilterBar() {
   const dropDownHandler = (prop: keyof TSelectStates) => () => {
     setSelectStates(prev => ({...prev, [prop]: !prev[prop]}));
   }
-  const categories = useAppSelector((state: RootState) => state.shop.categories)
+  const {categories} = useAppSelector((state: RootState) => state.shop)
   const dispatch = useAppDispatch();
   return (
     <section className={styles.filterBox}>
@@ -51,7 +52,12 @@ function FilterBar() {
             {index === 0 && (selectStates[data.stateProp] && (
               <ul className={styles.optionBox}>
                 {categories.map((category, index) => (
-                  <li key={category}>
+                  <li
+                    key={category}
+                    onClick={() => {
+                      dispatch(setCategoryRule(category));
+                    }}
+                  >
                     {category}
                   </li>
                 ))}

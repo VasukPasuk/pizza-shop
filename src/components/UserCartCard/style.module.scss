@@ -1,0 +1,42 @@
+.cartCard {
+
+  .upperInformation {
+
+    .cardImageBox {
+
+    }
+    .cardInformation {
+      h1 , h3 {
+
+      }
+    }
+  }
+
+  .cardButtonsGroup {
+
+    button {
+      &:nth-child(1) {
+        svg {
+
+        }
+        &:hover {
+
+        }
+      }
+      &:nth-child(2) {
+        svg {
+
+        }
+        &:hover {
+
+        }
+      }
+      &:nth-child(3) {
+
+        &:hover {
+
+        }
+      }
+    }
+  }
+}

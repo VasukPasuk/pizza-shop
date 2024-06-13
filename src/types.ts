@@ -6,6 +6,9 @@ type TSelectStates = {
   filter: boolean,
 }
 
+type TSize = 'small' | 'medium' | 'big'
+
+
 type DropDown = {
   name: string
   leftIcon: ReactElement<SVGElement>,
@@ -14,5 +17,6 @@ type DropDown = {
 
 type sortRule = 'cheap-to-expansive' | 'expansive-to-cheap' | 'a-Z' | 'Z-a' | "normal";
 
+type TCategoryRule = "All" | string;
 
-export type {DropDown, TSelectStates, sortRule};
+export type {DropDown, TSelectStates, sortRule, TCategoryRule, TSize};
