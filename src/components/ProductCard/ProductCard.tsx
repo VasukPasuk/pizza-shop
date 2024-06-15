@@ -13,7 +13,7 @@ import {TSize} from "@/types";
 
 const sizes: TSize[] = ['small', 'medium', 'big']
 
-function ProductCard(props: { product: IPizza }) {
+function ProductCard(props: { product: IPizza , pagination: [number, number]}) {
   const {category, name, image, ingredients, price, incart} = props.product;
   const dispatch = useAppDispatch();
   const [activeRecipe, setActiveRecipe] = useState<boolean>(false)

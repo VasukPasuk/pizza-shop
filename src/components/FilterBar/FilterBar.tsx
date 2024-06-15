@@ -36,8 +36,17 @@ function FilterBar() {
   const dropDownHandler = (prop: keyof TSelectStates) => () => {
     setSelectStates(prev => ({...prev, [prop]: !prev[prop]}));
   }
-  const {categories} = useAppSelector((state: RootState) => state.shop)
+  const {categories, pizzas, categoryRule} = useAppSelector((state: RootState) => state.shop)
+
   const dispatch = useAppDispatch();
+
+  const totalPizzaAmount = () => {
+    if (categoryRule.includes("All")) {
+      return pizzas.length;
+    }
+    return pizzas.filter((pizza) => pizza.category.includes(categoryRule)).length
+  }
+
   return (
     <section className={styles.filterBox}>
       <ul className={styles.dropDownFilters}>
@@ -78,7 +87,7 @@ function FilterBar() {
 
       </ul>
       <span className={styles.amountLabel}>
-        Total: 5
+        Total: {totalPizzaAmount()}
       </span>
     </section>
   );

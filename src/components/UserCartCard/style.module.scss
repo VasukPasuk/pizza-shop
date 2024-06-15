@@ -1,21 +1,41 @@
 .cartCard {
-
+  background: #FFC5A4;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
   .upperInformation {
-
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 1rem;
     .cardImageBox {
 
     }
     .cardInformation {
-      h1 , h3 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      h1 {
+        font-size: 1.325rem;
+        font-weight: 800;
+      }
+      h3 {
 
       }
     }
   }
 
   .cardButtonsGroup {
-
+    display: flex;
+    justify-content: right;
+    padding-right: 1rem;
+    gap: 0.5rem;
     button {
+      padding: 0.25rem 0.35rem;
+      border-radius: 0.25rem;
       &:nth-child(1) {
+        color: #E70000;
+        background: #B1DB58;
         svg {
 
         }
@@ -24,6 +44,8 @@
         }
       }
       &:nth-child(2) {
+        color: #E70000;
+        background: #FFA599;
         svg {
 
         }
@@ -32,7 +54,7 @@
         }
       }
       &:nth-child(3) {
-
+        border: 1px solid #FFA599;
         &:hover {
 
         }
